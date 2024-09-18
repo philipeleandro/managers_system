@@ -20,6 +20,8 @@ gem 'tzinfo-data', platforms: %i[ windows jruby ]
 
 gem 'bootsnap', require: false
 
+gem 'devise'
+
 group :development, :test do
   gem 'rspec-rails', '~> 7.0.0'
 
