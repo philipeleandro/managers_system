@@ -36,4 +36,4 @@ group :development do
   gem 'web-console'
 end
 
-gem "factory_bot", "~> 6.5"
+gem 'factory_bot', '~> 6.5'
