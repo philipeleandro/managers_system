@@ -30,10 +30,10 @@ group :development, :test do
   gem 'brakeman', require: false
 
   gem 'rubocop-rails-omakase', require: false
+
+  gem 'factory_bot_rails'
 end
 
 group :development do
   gem 'web-console'
 end
-
-gem 'factory_bot', '~> 6.5'
