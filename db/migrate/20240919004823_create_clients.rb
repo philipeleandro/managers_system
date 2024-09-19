@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateClients < ActiveRecord::Migration[7.2]
   def change
     create_table :hiers do |t|

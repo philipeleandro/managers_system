@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 
 gem 'administrate'
@@ -20,7 +22,7 @@ gem 'stimulus-rails'
 
 gem 'jbuilder'
 
-gem 'tzinfo-data', platforms: %i[ windows jruby ]
+gem 'tzinfo-data', platforms: %i[windows jruby]
 
 gem 'bootsnap', require: false
 
@@ -29,11 +31,21 @@ gem 'devise'
 group :development, :test do
   gem 'rspec-rails', '~> 7.0.0'
 
-  gem 'debug', platforms: %i[ mri windows ], require: 'debug/prelude'
+  gem 'debug', platforms: %i[mri windows], require: 'debug/prelude'
 
   gem 'brakeman', require: false
 
   gem 'rubocop-rails-omakase', require: false
+
+  gem 'rubocop-factory_bot', '!= 2.26.0', require: false
+
+  gem 'rubocop-performance', '1.19.0'
+
+  gem 'rubocop-rails', '2.20.2'
+
+  gem 'rubocop-rspec', '2.23.2'
+
+  gem 'rubocop-rspec_rails', '!= 2.29.0', require: false
 
   gem 'factory_bot_rails'
 end

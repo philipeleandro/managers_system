@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Hier < ApplicationRecord
   validates :name, :company_name, :phone, :email, :cpf, presence: true
   validates :email, :cpf, :cnpj, uniqueness: true
