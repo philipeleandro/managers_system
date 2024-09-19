@@ -1,6 +1,6 @@
 class CreateClients < ActiveRecord::Migration[7.2]
   def change
-    create_table :clients do |t|
+    create_table :hiers do |t|
       t.string :name, null: false
       t.string :company_name, null: false
       t.string :phone, null: false

@@ -1,5 +1,5 @@
 FactoryBot.define do
-  factory :client do
+  factory :hier do
     name { 'João Doe' }
     company_name { 'Doe Ltda' }
     phone { '65987064859' }

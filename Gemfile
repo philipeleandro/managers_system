@@ -1,5 +1,9 @@
 source 'https://rubygems.org'
 
+gem 'administrate'
+
+gem 'pundit'
+
 gem 'rails', '~> 7.2.1'
 
 gem 'sprockets-rails'

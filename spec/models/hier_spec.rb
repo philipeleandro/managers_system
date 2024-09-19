@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-RSpec.describe Client do
+RSpec.describe Hier do
   describe "validations" do
-    subject { build(:client) }
+    subject { build(:hier) }
 
     it { is_expected.to validate_presence_of(:name) }
     it { is_expected.to validate_presence_of(:company_name) }
