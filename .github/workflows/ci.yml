@@ -53,3 +53,24 @@ jobs:
       - name: Lint code for consistent style
         run: bin/rubocop -f github
 
+
+   name: Test
+    needs:
+      - lint
+      - scan_js
+      - scan_ruby
+    runs-on: ubuntu-latest
+    env:
+      DATABASE_URL: postgres://postgres:postgres@localhost:5432/managers_system_development
+    services:
+      postgres:
+        image: postgres:14.2
+        ports: ['5432:5432']
+        env:
+          POSTGRES_DB: managers_system_development
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
+    steps:
+      - name: Run tests
+        run: bundle exec rspec
