@@ -2,9 +2,9 @@
 
 Rails.application.routes.draw do
   namespace :admin do
-    resources :hiers
+    resources :hirers
 
-    root 'hiers#index'
+    root 'hirers#index'
   end
 
   devise_for :users

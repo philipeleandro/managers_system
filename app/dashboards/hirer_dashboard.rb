@@ -2,7 +2,7 @@
 
 require 'administrate/base_dashboard'
 
-class HierDashboard < Administrate::BaseDashboard
+class HirerDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
   #
@@ -29,35 +29,34 @@ class HierDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
     id
-    cnpj
+    name
     company_name
-    cpf
+    email
+    phone
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
     id
-    cnpj
+    name
     company_name
     cpf
+    cnpj
     email
-    name
     phone
     status_id
-    created_at
-    updated_at
   ].freeze
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
-    cnpj
+    name
     company_name
     cpf
+    cnpj
     email
-    name
     phone
     status_id
   ].freeze
@@ -74,10 +73,10 @@ class HierDashboard < Administrate::BaseDashboard
   #   }.freeze
   COLLECTION_FILTERS = {}.freeze
 
-  # Overwrite this method to customize how hiers are displayed
+  # Overwrite this method to customize how hirers are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(hier)
-  #   "Hier ##{hier.id}"
+  # def display_resource(hirer)
+  #   "Hirer ##{hirer.id}"
   # end
 end
