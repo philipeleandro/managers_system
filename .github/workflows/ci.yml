@@ -56,12 +56,15 @@ jobs:
   rspec:
     runs-on: ubuntu-latest
     env:
-      DATABASE_URL: postgres://postgres:postgres@localhost:5432/managers_system_development
+      DATABASE_URL: postgres://postgres:example@localhost:5432/app_test
     services:
       postgres:
-        image: postgres
-        ports:
-          - 5432:5432
+        image: postgres:14.2
+        ports: ['5432:5432']
+        env:
+          POSTGRES_DB: app_test
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: example
         options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
     steps:
       - name: Checkout code
