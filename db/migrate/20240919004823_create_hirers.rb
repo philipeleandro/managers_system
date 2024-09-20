@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-class CreateClients < ActiveRecord::Migration[7.2]
+class CreateHirers < ActiveRecord::Migration[7.2]
   def change
-    create_table :hiers do |t|
+    create_table :hirers do |t|
       t.string :name, null: false
       t.string :company_name, null: false
       t.string :phone, null: false

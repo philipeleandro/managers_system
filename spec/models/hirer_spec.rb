@@ -2,9 +2,9 @@
 
 require 'rails_helper'
 
-RSpec.describe Hier do
+RSpec.describe Hirer do
   describe 'validations' do
-    subject { build(:hier) }
+    subject { build(:hirer) }
 
     it { is_expected.to validate_presence_of(:name) }
     it { is_expected.to validate_presence_of(:company_name) }

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 FactoryBot.define do
-  factory :hier do
+  factory :hirer do
     name { 'João Doe' }
     company_name { 'Doe Ltda' }
     phone { '65987064859' }
