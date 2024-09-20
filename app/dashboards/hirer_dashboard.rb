@@ -77,6 +77,6 @@ class HirerDashboard < Administrate::BaseDashboard
   # across all pages of the admin dashboard.
   #
   def display_resource(hirer)
-    "#{hirer.name}"
+    hirer.name.to_s
   end
 end
