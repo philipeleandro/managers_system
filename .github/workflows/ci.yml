@@ -53,7 +53,7 @@ jobs:
       - name: Lint code for consistent style
         run: bin/rubocop -f github
 
-   name: Test
+  name: Test
     needs:
       - lint
       - scan_js
