@@ -54,10 +54,6 @@ jobs:
         run: bin/rubocop -f github
 
   name: Test
-    needs:
-      - lint
-      - scan_js
-      - scan_ruby
     runs-on: ubuntu-latest
     env:
       DATABASE_URL: postgres://postgres:postgres@localhost:5432/managers_system_development
