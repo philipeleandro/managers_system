@@ -76,7 +76,7 @@ class HirerDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how hirers are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(hirer)
-  #   "Hirer ##{hirer.id}"
-  # end
+  def display_resource(hirer)
+    hirer.name.to_s
+  end
 end

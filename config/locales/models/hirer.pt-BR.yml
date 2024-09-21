@@ -1,0 +1,12 @@
+pt-BR:
+  activerecord:
+    models:
+      hirer: Contratante
+    attributes:
+      hirer: 
+        name: Responsável
+        company_name: Empresa
+        phone: Telefone
+        email: E-mail
+        cpf: CPF
+        cnpj: CNPJ
