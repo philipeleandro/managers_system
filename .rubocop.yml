@@ -131,3 +131,11 @@ Rails/UniqueValidationWithoutIndex:
 
 RSpec/AnyInstance:
   Enabled: false
+
+Style/ClassAndModuleChildren:
+  Exclude:
+    - "app/enumerations/hirer/status.rb"
+
+Rails/ReversibleMigration:
+  Exclude:
+    - "db/migrate/20240921134546_change_status_id_to_status.rb"

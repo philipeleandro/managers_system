@@ -117,6 +117,8 @@ GEM
     diff-lcs (1.5.1)
     docile (1.4.1)
     drb (2.2.1)
+    enumerate_it (4.0.0)
+      activesupport (>= 6.0.0)
     erubi (1.13.0)
     factory_bot (6.5.0)
       activesupport (>= 5.0.0)
@@ -400,6 +402,7 @@ DEPENDENCIES
   capybara
   debug
   devise
+  enumerate_it
   factory_bot_rails
   importmap-rails
   jbuilder

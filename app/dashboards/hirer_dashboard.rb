@@ -17,7 +17,7 @@ class HirerDashboard < Administrate::BaseDashboard
     email: Field::String,
     name: Field::String,
     phone: Field::String,
-    status_id: Field::Number,
+    status: Field::Select.with_options(collection: Hirer::Status.to_a),
     created_at: Field::DateTime,
     updated_at: Field::DateTime
   }.freeze
@@ -33,6 +33,7 @@ class HirerDashboard < Administrate::BaseDashboard
     company_name
     email
     phone
+    status
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -45,7 +46,7 @@ class HirerDashboard < Administrate::BaseDashboard
     cnpj
     email
     phone
-    status_id
+    status
   ].freeze
 
   # FORM_ATTRIBUTES
@@ -58,7 +59,7 @@ class HirerDashboard < Administrate::BaseDashboard
     cnpj
     email
     phone
-    status_id
+    status
   ].freeze
 
   # COLLECTION_FILTERS
