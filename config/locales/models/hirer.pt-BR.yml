@@ -1,7 +1,7 @@
 pt-BR:
   activerecord:
     models:
-      hirer: Contrante
+      hirer: Contratante
     attributes:
       hirer: 
         name: Responsável
