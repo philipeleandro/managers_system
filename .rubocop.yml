@@ -127,4 +127,7 @@ Style/StringLiterals:
   EnforcedStyle: single_quotes
 
 Rails/UniqueValidationWithoutIndex:
- Enabled: false
+  Enabled: false
+
+RSpec/AnyInstance:
+  Enabled: false

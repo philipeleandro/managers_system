@@ -28,6 +28,10 @@ gem 'bootsnap', require: false
 
 gem 'devise'
 
+gem 'pry'
+
+gem 'pry-remote'
+
 group :development, :test do
   gem 'rspec-rails', '~> 7.0.0'
 
