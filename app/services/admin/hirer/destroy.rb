@@ -8,7 +8,7 @@ module Admin
       end
 
       def call
-        destroy_process = @hirer.destroy
+        destroy_process = @hirer.destroy ? true : false
 
         response(destroy_process)
       end

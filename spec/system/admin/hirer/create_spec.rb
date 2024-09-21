@@ -35,6 +35,7 @@ RSpec.describe 'Create hirer' do
 
         expect(page).to have_content('E-mail não pode ficar em branco')
         expect(page).to have_content('CPF não pode ficar em branco')
+        expect(page).to have_content('Criar Contratante')
       end
     end
 

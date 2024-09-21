@@ -17,7 +17,7 @@ module Admin
 
       def response(validation)
         { success: validation,
-          hirer: @hirer_build.reload }
+          hirer: @hirer_build }
       end
     end
   end
