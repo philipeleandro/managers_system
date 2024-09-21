@@ -131,4 +131,3 @@ Rails/UniqueValidationWithoutIndex:
 
 RSpec/AnyInstance:
   Enabled: false
-  
