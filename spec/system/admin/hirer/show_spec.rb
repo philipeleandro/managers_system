@@ -15,6 +15,7 @@ RSpec.describe 'Show hirer' do
 
     it 'accesses hirer' do
       visit admin_root_path
+      click_on 'Contratante'
       click_on hirer.name.to_s
 
       expect(page).to have_current_path(admin_hirer_path(hirer.id))
