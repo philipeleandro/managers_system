@@ -32,6 +32,8 @@ gem 'pry'
 
 gem 'pry-remote'
 
+gem 'enumerate_it'
+
 group :development, :test do
   gem 'rspec-rails', '~> 7.0.0'
 

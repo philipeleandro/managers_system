@@ -1,0 +1,5 @@
+pt-BR:
+  enumerations:
+    hirer/status:
+      active: 'Ativo'
+      inactive: 'Inativo'
