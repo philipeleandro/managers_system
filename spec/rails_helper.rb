@@ -38,12 +38,16 @@ rescue ActiveRecord::PendingMigrationError => e
   abort e.to_s.strip
 end
 RSpec.configure do |config|
+  config.include Warden::Test::Helpers
   config.include FactoryBot::Syntax::Methods
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_paths = [
     Rails.root.join('spec/fixtures')
   ]
 
+  config.before(type: :system) do
+    driven_by(:rack_test)
+  end
   # If you're not using ActiveRecord, or you'd prefer not to run each of your
   # examples within a transaction, remove the following line or assign false
   # instead of true.
