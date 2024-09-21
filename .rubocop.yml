@@ -132,6 +132,6 @@ Rails/UniqueValidationWithoutIndex:
 RSpec/AnyInstance:
   Enabled: false
 
-Style/ClassAndModuleChildrenn:
+Style/ClassAndModuleChildren:
   Exclude:
     - "app/enumerations/hirer/status.rb"
