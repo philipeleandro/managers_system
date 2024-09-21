@@ -12,11 +12,14 @@ class HirerDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     id: Field::Number,
     cnpj: Field::String,
+    formatted_cnpj: Field::String,
     company_name: Field::String,
     cpf: Field::String,
+    formatted_cpf: Field::String,
     email: Field::String,
     name: Field::String,
     phone: Field::String,
+    formatted_phone: Field::String,
     status: Field::Select.with_options(collection: Hirer::Status.to_a),
     created_at: Field::DateTime,
     updated_at: Field::DateTime
@@ -42,10 +45,10 @@ class HirerDashboard < Administrate::BaseDashboard
     id
     name
     company_name
-    cpf
-    cnpj
+    formatted_cpf
+    formatted_cnpj
     email
-    phone
+    formatted_phone
     status
   ].freeze
 
