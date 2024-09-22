@@ -9,6 +9,7 @@ RSpec.describe 'Create hirer' do
     it 'creates hirer' do
       login_as(user)
       visit admin_root_path
+      click_on 'Contratante'
       click_on 'Criar contratante'
       fill_in 'Responsável', with: 'Example'
       fill_in 'Empresa', with: 'Example'
@@ -27,6 +28,7 @@ RSpec.describe 'Create hirer' do
       it 'shows error message' do
         login_as(user)
         visit admin_root_path
+        click_on 'Contratante'
         click_on 'Criar contratante'
         fill_in 'Responsável', with: 'Example'
         fill_in 'Empresa', with: 'Example'
@@ -43,6 +45,7 @@ RSpec.describe 'Create hirer' do
       it 'shows error message' do
         login_as(user)
         visit admin_root_path
+        click_on 'Contratante'
         click_on 'Criar contratante'
         fill_in 'Responsável', with: 'Example'
         fill_in 'E-mail', with: 'example'

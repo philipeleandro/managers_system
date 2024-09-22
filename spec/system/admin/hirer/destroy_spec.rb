@@ -15,6 +15,7 @@ RSpec.describe 'Destroy hirer' do
 
     it 'delete hirer' do
       visit admin_root_path
+      click_on 'Contratante'
       click_on 'Deletar'
 
       expect(page).to have_current_path(admin_hirers_path)
@@ -33,6 +34,7 @@ RSpec.describe 'Destroy hirer' do
 
     it 'delete hirer' do
       visit admin_root_path
+      click_on 'Contratante'
       click_on 'Deletar'
 
       expect(page).to have_current_path(admin_hirers_path)

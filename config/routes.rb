@@ -3,9 +3,12 @@
 Rails.application.routes.draw do
   namespace :admin do
     resources :hirers
+    resources :welcomes, only: [:index]
 
-    root 'hirers#index'
+    root 'welcomes#index'
   end
+
+  root 'admin/welcomes#index'
 
   devise_for :users
 

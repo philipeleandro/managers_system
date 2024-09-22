@@ -12,6 +12,7 @@ RSpec.describe 'Update hirer' do
     it 'updates hirer' do
       login_as(user)
       visit admin_root_path
+      click_on 'Contratante'
       click_on hirer.name.to_s
       click_on "Editar #{hirer.name}"
       fill_in 'CPF', with: '1234678'
@@ -27,6 +28,7 @@ RSpec.describe 'Update hirer' do
       it 'shows error message' do
         login_as(user)
         visit admin_root_path
+        click_on 'Contratante'
         click_on hirer.name.to_s
         click_on "Editar #{hirer.name}"
         fill_in 'Responsável', with: ''
@@ -41,6 +43,7 @@ RSpec.describe 'Update hirer' do
       it 'shows error message' do
         login_as(user)
         visit admin_root_path
+        click_on 'Contratante'
         click_on hirer.name.to_s
         click_on "Editar #{hirer.name}"
         fill_in 'E-mail', with: 'Example'
