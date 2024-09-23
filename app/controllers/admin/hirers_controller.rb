@@ -5,6 +5,7 @@ module Admin
     helper HirerHelper
 
     before_action :authorize_resources, only: %i[index create]
+    before_action :authenticate_admin
 
     def index
       instance = Admin::Hirer::List.new(
