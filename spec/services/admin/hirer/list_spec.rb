@@ -24,15 +24,16 @@ RSpec.describe Admin::Hirer::List do
     it { expect(result[:resources].size).to eq 1 }
 
     context 'when has filter' do
+      let(:other_cpf) { CPF.generate }
       let(:hirer_another_cpf) do
         create(
           :hirer,
-          cpf: '123456789',
-          cnpj: '12345677889',
+          cpf: other_cpf,
+          cnpj: CNPJ.generate,
           email: 'test@email.com'
         )
       end
-      let(:action_params) { { controller: 'admin/hirers', action: 'index', search: '123456789' } }
+      let(:action_params) { { controller: 'admin/hirers', action: 'index', search: other_cpf } }
 
       before { hirer_another_cpf }
 

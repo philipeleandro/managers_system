@@ -10,3 +10,6 @@ pt-BR:
         email: E-mail
         cpf: CPF
         cnpj: CNPJ
+    errors:
+      messages:
+        not_valid: 'Não é valido!'
