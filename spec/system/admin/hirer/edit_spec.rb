@@ -15,7 +15,7 @@ RSpec.describe 'Update hirer' do
       click_on 'Contratante'
       click_on hirer.name.to_s
       click_on "Editar #{hirer.name}"
-      fill_in 'CPF', with: '1234678'
+      fill_in 'CPF', with: CPF.generate.to_s
       click_on 'Atualizar Contratante'
 
       expect(page).to have_current_path(admin_hirer_path(hirer.id))
