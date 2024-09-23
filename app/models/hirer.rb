@@ -10,34 +10,14 @@ class Hirer < ApplicationRecord
   has_enumeration_for :status, with: Status, create_helpers: true
 
   def validate_cpf
-    document = CPF.new(cpf)
+    message = I18n.t('activerecord.errors.messages.not_valid')
 
-    return if document.valid?
-
-    errors.add(:cpf, 'não é valido!')
+    errors.add(:cpf, message) unless Validator::Documents.valid_cpf?(cpf)
   end
 
   def validate_cnpj
-    return if cnpj.blank?
+    message = I18n.t('activerecord.errors.messages.not_valid')
 
-    document = CNPJ.new(cnpj)
-
-    return if document.valid?
-
-    errors.add(:cnpj, 'não é valido!')
-  end
-
-  def formatted_cpf
-    CPF.new(cpf).formatted
-  end
-
-  def formatted_cnpj
-    CNPJ.new(cnpj).formatted
-  end
-
-  def formatted_phone
-    phone_number = Phonelib.parse(phone)
-
-    phone_number.local_number
+    errors.add(:cnpj, message) unless Validator::Documents.valid_cnpj?(cnpj)
   end
 end

@@ -7,9 +7,9 @@ pt-BR:
         name: Responsável
         company_name: Empresa
         phone: Telefone
-        formatted_phone: Telefone
         email: E-mail
         cpf: CPF
-        formatted_cpf: CPF
         cnpj: CNPJ
-        formatted_cnpj: CNPJ
+    errors:
+      messages:
+        not_valid: 'Não é valido!'

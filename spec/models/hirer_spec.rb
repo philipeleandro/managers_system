@@ -19,5 +19,33 @@ RSpec.describe Hirer do
     it { is_expected.to allow_value('user@example.com').for(:email) }
     it { is_expected.not_to allow_value('@com.br').for(:email) }
     it { is_expected.not_to allow_value('user.com.br').for(:email) }
+
+    describe '.validate_cpf' do
+      context 'when valid' do
+        subject(:hirer) { build(:hirer, cpf: CPF.generate) }
+
+        it { expect(hirer).to be_valid }
+      end
+
+      context 'when invalid' do
+        subject(:hirer) { build(:hirer, cpf: '123456') }
+
+        it { expect(hirer).not_to be_valid }
+      end
+    end
+
+    describe '.validate_cnpj' do
+      context 'when valid' do
+        subject(:hirer) { build(:hirer, cnpj: CNPJ.generate) }
+
+        it { expect(hirer).to be_valid }
+      end
+
+      context 'when invalid' do
+        subject(:hirer) { build(:hirer, cnpj: '12231256') }
+
+        it { expect(hirer).not_to be_valid }
+      end
+    end
   end
 end
