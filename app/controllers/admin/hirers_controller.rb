@@ -2,6 +2,8 @@
 
 module Admin
   class HirersController < Admin::ApplicationController
+    helper HirerHelper
+
     before_action :authorize_resources, only: %i[index create]
 
     def index
