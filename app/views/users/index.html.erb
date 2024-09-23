@@ -1,0 +1,31 @@
+<h2> <%= t('users.index.title')%> </h2>
+
+  <section>
+    <%= form_with url: users_path, method: :get do |f| %>
+      <%= f.label t("activerecord.attributes.user.email") %>
+      <%= f.text_field :email %>
+      <%= f.submit t('helpers.search'), class: "button" %>
+    <% end %>
+  </section>
+
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col"><%= t("users.email") %></th>
+        <th scope="col"><%= t("users.index.profile") %></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @users.each do |user| %>
+        <tr>
+          <td scope="row"><%= user.email %></td>
+          <td scope="row"><%= user.admin? ? t("users.index.is_admin") : t("users.index.is_user") %></td>
+          <td scope="row"><%= button_to t('helpers.change_admin_status'), change_admin_status_user_path(user), 
+                                        data: { turbo_confirm: t("users.messages.are_you_sure") }, method: :patch %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+<%= link_to "Voltar", root_path , class: "button" %>

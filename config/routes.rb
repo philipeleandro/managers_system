@@ -8,6 +8,12 @@ Rails.application.routes.draw do
     root 'welcomes#index'
   end
 
+  resources :users, only: [:index] do
+    member do
+      patch :change_admin_status
+    end
+  end
+
   root 'admin/welcomes#index'
 
   devise_for :users
