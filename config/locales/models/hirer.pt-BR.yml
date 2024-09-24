@@ -7,9 +7,11 @@ pt-BR:
         name: Responsável
         company_name: Empresa
         phone: Telefone
-        email: E-mail
+        email: Email
         cpf: CPF
         cnpj: CNPJ
+        created_at: Criado em
+        update_at: Atualizado em
     errors:
       messages:
         not_valid: 'Não é valido!'

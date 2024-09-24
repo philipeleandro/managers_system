@@ -2,6 +2,8 @@
 
 source 'https://rubygems.org'
 
+gem 'city-state'
+
 gem 'cpf_cnpj'
 
 gem 'phonelib'

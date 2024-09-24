@@ -1,0 +1,14 @@
+pt-BR:
+  activerecord:
+    models:
+      applier: Candidato
+    attributes:
+      applier: 
+        name: Nome
+        phone: Telefone
+        email: Email
+        state: Estado
+        city: Cidade
+        cv_link: Link do Currículo
+        created_at: Criado em
+        update_at: Atualizado em
