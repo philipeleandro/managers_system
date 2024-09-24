@@ -1,15 +1,12 @@
 <div class="collapse navbar-collapse" id="navbarNav">
   <div class="login_items">
     <% if user_signed_in? and current_user.admin? %>
-      <%= link_to t('helpers.labels.edit_profile'), edit_user_registration_path, class: 'button login' %>
-      <%= button_to t('helpers.labels.logout'), destroy_user_session_path, method: :delete, class: 'button logout' %>
       <%= link_to t('users.index.title'), users_path, class: 'button login' %>
-    <% elsif user_signed_in? and !current_user.admin? %>
-      <%= link_to t('helpers.labels.edit_profile'), edit_user_registration_path, class: 'button login' %>
-      <%= button_to t('helpers.labels.logout'), destroy_user_session_path, method: :delete, class: 'button logout' %>
+      <%= link_to t('devise.sessions.edit_profile'), edit_user_registration_path, class: 'button login' %>
+      <%= button_to t('devise.sessions.sign_out'), destroy_user_session_path, method: :delete, class: 'button logout' %>
     <% else %>
-      <%= link_to t('helpers.labels.sign_up'), new_user_registration_path, class: 'button login' %>
-      <%= link_to t('helpers.labels.login'), new_user_session_path, class: 'button login' %>
+      <%= link_to t('devise.sessions.edit_profile'), edit_user_registration_path, class: 'button login' %>
+      <%= button_to t('devise.sessions.sign_out'), destroy_user_session_path, method: :delete, class: 'button logout' %>
     <% end %>
   </div>
 </div>
