@@ -117,6 +117,8 @@ pt-BR:
         sign_in: Login
       signed_in: Login efetuado com sucesso.
       signed_out: Logout efetuado com sucesso.
+      sign_out: Sair
+      edit_profile: Editar Perfil
     shared:
       links:
         back: Voltar

@@ -5,4 +5,6 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
     :recoverable, :rememberable, :validatable
+
+  scope :search_by_email, ->(email) { where(email: email.strip) }
 end
