@@ -7,5 +7,6 @@ FactoryBot.define do
     phone { '11922223333' }
     state { 'MyString' }
     city { 'MyString' }
+    cv_link { 'https://www.mystring.com' }
   end
 end

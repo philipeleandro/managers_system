@@ -7,6 +7,7 @@ module FieldsHelper
     when :cnpj then CNPJ.new(field.resource.cnpj).formatted
     when :phone then Phonelib.parse(field.resource.phone).local_number
     when :city then field.resource.city.capitalize
+    when :cv_link then curriculum_link(field.resource.cv_link)
     else
       field.resource.send(field.attribute)
     end
@@ -18,5 +19,9 @@ module FieldsHelper
     else
       field.resource.send(field.attribute)
     end
+  end
+
+  def curriculum_link(url)
+    link_to I18n.t('views.applier.cv_link'), url
   end
 end

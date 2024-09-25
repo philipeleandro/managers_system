@@ -12,3 +12,6 @@ pt-BR:
         cv_link: Link do Currículo
         created_at: Criado em
         update_at: Atualizado em
+  views:
+    applier:
+      cv_link: Currículo
