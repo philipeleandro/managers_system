@@ -14,7 +14,7 @@ RSpec.describe 'Create hirer' do
       fill_in 'Responsável', with: 'Example'
       fill_in 'Empresa', with: 'Example'
       fill_in 'CPF', with: CPF.generate.to_s
-      fill_in 'E-mail', with: 'example@test.com'
+      fill_in 'Email', with: 'example@test.com'
       fill_in 'Telefone', with: '11912345678'
       click_on 'Criar Contratante'
 
@@ -35,7 +35,7 @@ RSpec.describe 'Create hirer' do
         fill_in 'Telefone', with: '11912345678'
         click_on 'Criar Contratante'
 
-        expect(page).to have_content('E-mail não pode ficar em branco')
+        expect(page).to have_content('Email não pode ficar em branco')
         expect(page).to have_content('CPF não pode ficar em branco')
         expect(page).to have_content('Criar Contratante')
       end
@@ -48,12 +48,12 @@ RSpec.describe 'Create hirer' do
         click_on 'Contratante'
         click_on 'Criar contratante'
         fill_in 'Responsável', with: 'Example'
-        fill_in 'E-mail', with: 'example'
+        fill_in 'Email', with: 'example'
         fill_in 'Empresa', with: 'Example'
         fill_in 'Telefone', with: '11912345678'
         click_on 'Criar Contratante'
 
-        expect(page).to have_content('E-mail não é válido')
+        expect(page).to have_content('Email não é válido')
       end
     end
   end

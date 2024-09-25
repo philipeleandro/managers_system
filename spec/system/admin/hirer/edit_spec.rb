@@ -46,11 +46,11 @@ RSpec.describe 'Update hirer' do
         click_on 'Contratante'
         click_on hirer.name.to_s
         click_on "Editar #{hirer.name}"
-        fill_in 'E-mail', with: 'Example'
+        fill_in 'Email', with: 'Example'
         click_on 'Atualizar Contratante'
 
         expect(page).to have_current_path(admin_hirer_path(hirer.id))
-        expect(page).to have_content('E-mail não é válido')
+        expect(page).to have_content('Email não é válido')
       end
     end
   end
