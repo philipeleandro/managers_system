@@ -13,6 +13,18 @@ module Admin
       sign_out(current_user)
     end
 
+    private
+
+    def authorize_by_action
+      case params[:action].to_sym
+      when :index then authorize_resource(resource_class)
+      when :create
+        resource = new_resource(resource_params)
+
+        authorize_resource(resource)
+      end
+    end
+
     # Override this value to specify the number of elements to display at a time
     # on index pages. Defaults to 20.
     # def records_per_page

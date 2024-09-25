@@ -2,7 +2,7 @@
 
 module Admin
   class HirersController < Admin::ApplicationController
-    before_action :authorize_resources, only: %i[index create]
+    before_action :authorize_by_action, only: %i[index create]
 
     def index
       instance = Admin::Hirer::List.new(
@@ -64,17 +64,6 @@ module Admin
       end
 
       redirect_to after_resource_destroyed_path(requested_resource), status: :see_other
-    end
-
-    private
-
-    def authorize_resources
-      if params[:action].to_sym == :create
-        @resource_class = new_resource(resource_params)
-        resource_class = @resource_class
-      end
-
-      authorize_resource(resource_class)
     end
 
     # Override this method to specify custom lookup behavior.
