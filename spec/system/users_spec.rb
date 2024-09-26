@@ -36,10 +36,9 @@ RSpec.describe 'Users list' do
     let(:user) { create(:user, admin: false) }
 
     it 'can not access' do
-      visit admin_root_path
+      visit users_path
 
-      expect(page).to have_no_link('Lista de Usuários')
-      expect(page).to have_current_path(admin_root_path)
+      expect(page).to have_current_path(new_user_session_path)
     end
   end
 end

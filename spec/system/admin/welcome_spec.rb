@@ -25,8 +25,7 @@ RSpec.describe 'Welcome' do
     it 'acesses regular profile buttons' do
       visit admin_root_path
 
-      expect(page).to have_link('Editar Perfil')
-      expect(page).to have_button('Sair')
+      expect(page).to have_current_path(new_user_session_path)
     end
   end
 end

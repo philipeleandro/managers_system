@@ -10,7 +10,19 @@ module Admin
     def authenticate_admin
       return if current_user.admin?
 
-      sign_out(current_user)
+      redirect_to destroy_user_session_path
+    end
+
+    private
+
+    def authorize_by_action
+      case params[:action].to_sym
+      when :index then @resource_class = authorize_resource(resource_class)
+      when :create
+        resource = new_resource(resource_params)
+
+        @resource_class = authorize_resource(resource)
+      end
     end
 
     # Override this value to specify the number of elements to display at a time
