@@ -20,7 +20,6 @@ class UsersController < ApplicationController
   def admin_only
     return if current_user.admin?
 
-    flash[:alert] = t('users.messages.not_admin')
-    redirect_to root_path
+    redirect_to destroy_user_session_path
   end
 end
