@@ -2,6 +2,8 @@
 
 module Admin
   class ApplicationController < Administrate::ApplicationController
+    helper FieldsHelper
+
     before_action :authenticate_user!
     before_action :authenticate_admin
 

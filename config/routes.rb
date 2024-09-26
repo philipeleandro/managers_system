@@ -3,6 +3,7 @@
 Rails.application.routes.draw do
   namespace :admin do
     resources :hirers
+    resources :appliers
     resources :welcomes, only: [:index]
 
     root 'welcomes#index'
