@@ -22,6 +22,7 @@ module Admin
 
     def create
       instance = Admin::Applier::Create.new(applier_build: @resource_class).call
+
       if instance[:success]
         redirect_to(
           after_resource_created_path(instance[:applier]),
