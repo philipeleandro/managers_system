@@ -12,7 +12,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user.admin? ? @user.update(admin: false) : @user.update(admin: true)
 
-    redirect_to users_path, notice: t('users.messages.admin_status_changed', user: @user.email)
+    redirect_to root_path, notice: t('users.messages.admin_status_changed', user: @user.email)
   end
 
   private
