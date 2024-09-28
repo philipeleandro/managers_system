@@ -3,11 +3,6 @@
 class UsersController < ApplicationController
   before_action :admin_only
 
-  def index
-    @users = User.all
-    @users = User.search_by_email(params[:email]) if params[:email].present?
-  end
-
   def change_admin_status
     @user = User.find(params[:id])
     @user.admin? ? @user.update(admin: false) : @user.update(admin: true)
@@ -20,6 +15,8 @@ class UsersController < ApplicationController
   def admin_only
     return if current_user.admin?
 
+    # :nocov:
     redirect_to destroy_user_session_path
+    # :nocov:
   end
 end
