@@ -1,4 +1,16 @@
-<section class="bg-light py-3 py-md-5 py-xl-8">
+<section class="main-container">
+  <div class="container-alerts">
+    <% flash.each do |type, msg| %>
+      <% if type.to_sym == :notice  %>
+        <% alert_class = "alert-primary" %>
+      <% else %>
+        <% alert_class = "alert-danger" %>
+      <% end %>
+        <p class="alert <%= alert_class %>">
+          <%= msg %>
+        </p>
+    <% end %>
+  </div>
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-5 col-xxl-4">
@@ -38,7 +50,7 @@
         </div>
         <div class="d-flex gap-2 gap-md-4 flex-column flex-md-row justify-content-md-center mt-4">
           <%= link_to 'Criar uma nova conta', new_user_registration_path, class: "link-secondary text-decoration-none" %>
-          <%= link_to 'Criar uma nova conta', edit_user_password_path, class: "link-secondary text-decoration-none" %>
+          <%= link_to 'Editar uma conta existente', edit_user_password_path, class: "link-secondary text-decoration-none" %>
         </div>
       </div>
     </div>
