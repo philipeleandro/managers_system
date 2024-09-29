@@ -28,7 +28,7 @@ RSpec.describe 'Users list' do
       click_on 'Trocar perfil'
 
       expect(page).to have_current_path(users_path)
-      expect(page).to have_content('Perfil ana@doe.com alterado com sucesso!')
+      expect(page).to have_content('Perfil joao@doe.com alterado com sucesso!')
     end
   end
 
