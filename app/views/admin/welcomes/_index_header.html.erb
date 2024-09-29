@@ -15,6 +15,6 @@
     ) %>
   <% end %>
 
-  <%= link_to "#{t("administrate.actions.edit")} sua conta ", edit_user_registration_path, class: "button user-edit", style: "margin-right: 10px;" %>
-  <%= button_to t('devise.sessions.sign_out'), destroy_user_session_path, method: :delete, class: 'button' %>
+  <%= link_to "#{t("administrate.actions.edit")} sua conta ", edit_user_registration_path, class: 'button', style: 'margin-right: 10px;' %>
+  <%= button_to t('devise.sessions.sign_out'), destroy_user_session_path, method: :delete, class: 'button button--danger' %>
 </header>
