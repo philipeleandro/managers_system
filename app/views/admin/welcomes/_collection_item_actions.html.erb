@@ -1,0 +1,10 @@
+<td style="padding-right: 0px;">
+  <%= link_to(
+      t('helpers.change_admin_status'),
+      change_admin_status_user_path(resource.id),
+      class: "text-color-red", 
+      method: :patch, 
+      data: { confirm: t("administrate.actions.confirm") } 
+      )
+    %>
+</td>

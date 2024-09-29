@@ -17,7 +17,7 @@
         <div class="card border border-light-subtle rounded-4">
           <div class="card-body p-3 p-md-4 p-xl-5">
             <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-              <h4 class="text-center mb-4">Login</h4>
+              <h5 class="text-center mb-4"><%= t('messages.welcome_login') %></h5>
               <div class="row gy-3 overflow-hidden">
                 <div class="col-12">
                   <div class="form-floating">
@@ -41,7 +41,7 @@
                 <% end %>
                 <div class="col-12">
                   <div class="d-grid">
-                    <%= f.submit "Log in", class: "btn btn-primary btn-lg" %>
+                    <%= f.submit t('messages.login'), class: "btn btn-primary btn-lg" %>
                   </div>
                 </div>
               </div>
@@ -50,7 +50,7 @@
         </div>
         <div class="d-flex gap-2 gap-md-4 flex-column flex-md-row justify-content-md-center mt-4">
           <%= link_to 'Criar uma nova conta', new_user_registration_path, class: "link-secondary text-decoration-none" %>
-          <%= link_to 'Editar uma conta existente', edit_user_password_path, class: "link-secondary text-decoration-none" %>
+          <%= link_to 'Esqueci minha senha', new_user_password_path, class: "link-secondary text-decoration-none" %>
         </div>
       </div>
     </div>
