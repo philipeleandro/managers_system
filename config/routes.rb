@@ -15,7 +15,9 @@ Rails.application.routes.draw do
     end
   end
 
-  root 'admin/welcomes#index'
+  devise_scope :user do
+    root 'devise/sessions#new'
+  end
 
   devise_for :users
 
