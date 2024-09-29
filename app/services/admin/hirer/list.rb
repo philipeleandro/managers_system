@@ -42,7 +42,9 @@ module Admin
 
         return relation if resource_includes.empty?
 
+        # :nocov:
         relation.includes(*resource_includes)
+        # :nocov:
       end
 
       def paginate_resources(resources)

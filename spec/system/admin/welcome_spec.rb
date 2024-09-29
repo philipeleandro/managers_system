@@ -13,8 +13,8 @@ RSpec.describe 'Welcome' do
     it 'acesses admin profile buttons' do
       visit admin_root_path
 
-      expect(page).to have_link('Lista de Usuários')
-      expect(page).to have_link('Editar Perfil')
+      expect(page).to have_link('Editar')
+      expect(page).to have_link('Trocar perfil')
       expect(page).to have_button('Sair')
     end
   end
@@ -26,6 +26,7 @@ RSpec.describe 'Welcome' do
       visit admin_root_path
 
       expect(page).to have_current_path(new_user_session_path)
+      expect(page).to have_content('Para continuar, faça login ou registre-se.')
     end
   end
 end
