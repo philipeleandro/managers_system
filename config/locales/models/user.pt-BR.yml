@@ -4,12 +4,11 @@ pt-BR:
       user: Usuário
     attributes:
       user:
-        email: E-mail
+        email: Email
         password: Senha
         admin: Administrador
   helpers:
     change_admin_status: Trocar perfil
-    search: Buscar
   users:
     index:
       title: Lista de Usuários
@@ -18,5 +17,4 @@ pt-BR:
       is_user: Usuário
     messages:
       admin_status_changed: Perfil %{user} alterado com sucesso!
-      not_admin: Você não tem permissão para acessar essa página
       are_you_sure: Tem certeza que deseja mudar o perfil deste usuário?
