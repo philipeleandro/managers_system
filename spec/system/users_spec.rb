@@ -12,23 +12,25 @@ RSpec.describe 'Users list' do
     let(:second_user) { create(:user, id: 22, email: 'ana@doe.com', admin: true) }
 
     it 'accesses users list' do
+      login_as(user)
       visit admin_root_path
-      click_on 'Lista de Usuários'
 
-      expect(page).to have_current_path(users_path)
-      expect(page).to have_content('Lista de Usuários')
+      expect(page).to have_content('Lista de usuários')
       expect(page).to have_content(user.email)
     end
 
-    it 'changes second user to admin' do
-      visit admin_root_path
-      click_on 'Lista de Usuários'
-      fill_in 'email', with: second_user.email
-      click_on 'Buscar'
-      click_on 'Trocar perfil'
+    context 'when two users' do
+      before do
+        login_as(second_user)
+      end
 
-      expect(page).to have_current_path(users_path)
-      expect(page).to have_content('Perfil ana@doe.com alterado com sucesso!')
+      it 'changes an user' do
+        visit admin_root_path
+
+        click_on 'Trocar perfil', match: :first
+
+        expect(page).to have_content("Perfil #{user.email} alterado com sucesso!")
+      end
     end
   end
 
@@ -36,7 +38,7 @@ RSpec.describe 'Users list' do
     let(:user) { create(:user, admin: false) }
 
     it 'can not access' do
-      visit users_path
+      visit admin_root_path
 
       expect(page).to have_current_path(new_user_session_path)
     end

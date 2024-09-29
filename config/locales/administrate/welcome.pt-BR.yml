@@ -1,0 +1,8 @@
+pt-BR:
+  model:
+    welcome: Início
+  attributes:
+    email: Email
+    admin: Admin
+    created_at: Criado em
+    updated_at: Atualizado em
