@@ -40,7 +40,7 @@ RSpec.describe 'Users list' do
     it 'can not access' do
       visit admin_root_path
 
-      expect(page).to have_current_path(new_user_session_path)
+      expect(page).to have_current_path(root_path)
     end
   end
 end

@@ -26,7 +26,7 @@ RSpec.describe 'Authorization' do
     it 'logout out user' do
       visit admin_appliers_path
 
-      expect(page).to have_content('Para continuar, faça login ou registre-se.')
+      expect(page).to have_content('Logout efetuado com sucesso')
     end
   end
 end

@@ -3,6 +3,7 @@
 module Admin
   class WelcomesController < Admin::ApplicationController
     before_action :authorize_by_action, only: %i[index]
+
     def index
       search_term = params[:search].to_s.strip
       resources = filter_resources(User.all, search_term: search_term)

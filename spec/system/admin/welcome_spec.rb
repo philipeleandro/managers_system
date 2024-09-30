@@ -25,8 +25,8 @@ RSpec.describe 'Welcome' do
     it 'acesses regular profile buttons' do
       visit admin_root_path
 
-      expect(page).to have_current_path(new_user_session_path)
-      expect(page).to have_content('Para continuar, faça login ou registre-se.')
+      expect(page).to have_current_path(root_path)
+      expect(page).to have_content('Logout efetuado com sucesso')
     end
   end
 end
