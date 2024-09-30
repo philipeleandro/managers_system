@@ -1,5 +1,5 @@
 <% content_for(:title) do %>
-  <%= 'Lista de usuários' %>
+  <%= t('title.user_list') %>
 <% end %>
 
 <header class="main-content__header">
@@ -11,9 +11,10 @@
     <%= render(
       "search",
       search_term: search_term,
-      resource_name:'Usuário'
+      resource_name: t('resource.user')
     ) %>
   <% end %>
 
-  <%= button_to t('devise.sessions.sign_out'), destroy_user_session_path, method: :delete, class: 'button logout' %>
+  <%= link_to "#{t("administrate.actions.edit")} sua conta ", edit_user_registration_path, class: 'button', style: 'margin-right: 10px;' %>
+  <%= button_to t('devise.sessions.sign_out'), destroy_user_session_path, method: :delete, class: 'button button--danger' %>
 </header>

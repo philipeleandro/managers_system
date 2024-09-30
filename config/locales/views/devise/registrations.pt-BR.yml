@@ -1,0 +1,16 @@
+pt-BR:
+  title: 
+    user_list: Lista de usuários
+  resource: 
+    user: Usuário
+  messages: 
+    update_register: Atualizar cadastro
+    blank_if_dont_want_update: Deixe em branco se não quiser alterar
+    to_finish: Para finalizar, digite sua senha atual
+    create_account: Crie sua conta
+    mininum_character: Mínimo de caracteres
+    to_create_account: Criar conta
+  field:
+    new_password: Nova senha
+    confirm_password: Confirme sua nova senha
+    update: Atualizar
