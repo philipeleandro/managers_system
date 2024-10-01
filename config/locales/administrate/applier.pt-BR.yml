@@ -1,0 +1,5 @@
+pt-BR:
+  applier:
+    message:
+      no_file: Nenhum arquivo anexado
+      open_file: Abrir arquivo

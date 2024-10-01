@@ -16,7 +16,7 @@ class ApplierDashboard < Administrate::BaseDashboard
     name: Field::String,
     phone: Field::String,
     state: Field::Select.with_options(collection: CS.states(:br).to_a),
-    cv_link: Field::String,
+    attachment: Field::ActiveStorage,
     created_at: Field::DateTime,
     updated_at: Field::DateTime
   }.freeze
@@ -41,7 +41,7 @@ class ApplierDashboard < Administrate::BaseDashboard
     phone
     city
     state
-    cv_link
+    attachment
   ].freeze
 
   # FORM_ATTRIBUTES
@@ -53,7 +53,7 @@ class ApplierDashboard < Administrate::BaseDashboard
     phone
     state
     city
-    cv_link
+    attachment
   ].freeze
 
   # COLLECTION_FILTERS

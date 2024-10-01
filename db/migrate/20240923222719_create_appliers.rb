@@ -8,7 +8,6 @@ class CreateAppliers < ActiveRecord::Migration[7.2]
       t.string :phone, null: false
       t.string :state, null: false
       t.string :city, null: false
-      t.string :cv_link, null: false
 
       t.timestamps
     end
