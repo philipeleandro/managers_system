@@ -19,6 +19,24 @@ RSpec.describe Applier do
     it { is_expected.not_to allow_value('user.com.br').for(:email) }
 
     it { is_expected.to have_one_attached(:attachment) }
+
+    context 'when attachment' do
+      subject(:applier) { build(:applier) }
+
+      it 'does not valid' do
+        applier.attachment.attach(
+          io: StringIO.new('Invalid content'),
+          filename: 'invalid.txt',
+          content_type: 'text/plain'
+        )
+
+        expect(applier).not_to be_valid
+      end
+
+      it 'when valid' do
+        expect(applier).to be_valid
+      end
+    end
   end
 
   describe 'callbacks' do
