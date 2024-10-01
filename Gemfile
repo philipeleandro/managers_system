@@ -2,6 +2,8 @@
 
 source 'https://rubygems.org'
 
+gem 'shoulda-callback-matchers', '~> 1.1.1'
+
 gem 'city-state'
 
 gem 'cpf_cnpj'

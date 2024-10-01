@@ -20,4 +20,8 @@ RSpec.describe Applier do
 
     it { is_expected.to have_one_attached(:attachment) }
   end
+
+  describe 'callbacks' do
+    it { is_expected.to callback(:purge_cv_file).before(:destroy) }
+  end
 end
