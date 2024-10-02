@@ -16,6 +16,7 @@ module FieldsHelper
   def format_select(field)
     case field.attribute
     when :status then field.resource.status_humanize
+    when :admin then field.resource.admin? ? t('users.index.is_admin') : t('users.index.is_user')
     else
       field.resource.send(field.attribute)
     end
