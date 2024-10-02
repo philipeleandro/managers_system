@@ -2,6 +2,10 @@
 
 source 'https://rubygems.org'
 
+gem 'shoulda-callback-matchers', '~> 1.1.1'
+
+gem 'active_storage_validations'
+
 gem 'city-state'
 
 gem 'cpf_cnpj'
@@ -9,6 +13,8 @@ gem 'cpf_cnpj'
 gem 'phonelib'
 
 gem 'administrate'
+
+gem 'administrate-field-active_storage'
 
 gem 'pundit'
 

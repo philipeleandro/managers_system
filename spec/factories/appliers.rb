@@ -7,7 +7,14 @@ FactoryBot.define do
     phone { '11922223333' }
     state { 'MyString' }
     city { 'MyString' }
-    cv_link { 'https://www.mystring.com' }
+
+    after(:build) do |applier|
+      applier.attachment.attach(
+        io: StringIO.new('%PDF-1.4\n%example PDF content'),
+        filename: 'test_pdf.pdf',
+        content_type: 'application/pdf'
+      )
+    end
   end
 
   factory :second_applier, class: 'Applier' do
@@ -16,6 +23,13 @@ FactoryBot.define do
     phone { '11933332222' }
     state { 'SP' }
     city { 'String' }
-    cv_link { 'https://www.mycv.com' }
+
+    after(:build) do |applier|
+      applier.attachment.attach(
+        io: StringIO.new('%PDF-1.4\n%example PDF content'),
+        filename: 'test_pdf.pdf',
+        content_type: 'application/pdf'
+      )
+    end
   end
 end

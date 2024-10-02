@@ -9,9 +9,6 @@ pt-BR:
         email: Email
         state: Estado
         city: Cidade
-        cv_link: Link do Currículo
+        attachment: Currículo
         created_at: Criado em
         update_at: Atualizado em
-  views:
-    applier:
-      cv_link: Currículo
