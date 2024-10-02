@@ -23,7 +23,7 @@ RSpec.describe Applier do
     context 'when attachment' do
       subject(:applier) { build(:applier) }
 
-      it 'does not valid' do
+      it 'is not valid' do
         applier.attachment.attach(
           io: StringIO.new('Invalid content'),
           filename: 'invalid.txt',
@@ -33,7 +33,7 @@ RSpec.describe Applier do
         expect(applier).not_to be_valid
       end
 
-      it 'when valid' do
+      it 'is valid' do
         expect(applier).to be_valid
       end
     end
