@@ -1,0 +1,11 @@
+pt-BR:
+  activerecord:
+    models:
+      role: Vaga
+    attributes:
+      role: 
+        title: Título
+        description: Descrição
+        requirements: Requisitos
+        created_at: Criado em
+        update_at: Atualizado em

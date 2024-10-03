@@ -1,0 +1,6 @@
+pt-BR:
+  enumerations:
+    role/status:
+      new: Novo
+      in_progress: Em andamento
+      finalized: Finalizado

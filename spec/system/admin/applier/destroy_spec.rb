@@ -27,11 +27,6 @@ RSpec.describe 'Destroy applier' do
     before do
       applier
       allow_any_instance_of(Applier).to receive(:destroy).and_return(false)
-      # allow_any_instance_of(Admin::Hirer::Destroy).to receive(:call)
-      #   .and_return({ success: false,
-      #                 message: '<br/>' }
-      #              )
-      # Commented to help when to implement delete service for applier
     end
 
     it 'delete applier' do

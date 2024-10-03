@@ -17,7 +17,7 @@ require 'administrate/field/url'
 require 'administrate/field/password'
 
 module Administrate
-  class BaseDashboard
+  class BaseDashboard # rubocop:disable Metrics/ClassLength
     include Administrate
 
     DASHBOARD_SUFFIX = 'Dashboard'
@@ -61,7 +61,20 @@ module Administrate
         when 'create' then 'new'
         else action
         end
-      specific_form_attributes_for(action) || self.class::FORM_ATTRIBUTES
+      specific_form_attributes_for(action) || form_by_action(action)
+    end
+
+    def form_by_action(action)
+      default_form = self.class::FORM_ATTRIBUTES
+
+      return default_form if default_form.present?
+
+      case action
+      when 'update'
+        self.class::FORM_ATTRIBUTES_EDIT
+      when 'new'
+        self.class::FORM_ATTRIBUTES_NEW
+      end
     end
 
     def specific_form_attributes_for(action)
