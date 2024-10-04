@@ -5,6 +5,7 @@ class UsersController < ApplicationController
 
   def change_admin_status
     @user = User.find(params[:id])
+
     @user.admin? ? @user.update(admin: false) : @user.update(admin: true)
 
     redirect_to admin_root_path, notice: t('users.messages.admin_status_changed', user: @user.email)
