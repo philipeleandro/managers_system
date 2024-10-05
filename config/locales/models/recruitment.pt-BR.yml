@@ -1,0 +1,19 @@
+pt-BR:
+  activerecord:
+    models:
+      recruitment: Recrutamento
+    attributes:
+      recruitment: 
+        paid: Pago
+        name: Nome
+        hirer_id: Contratante
+        hirer: Contratante
+        duration: Duração
+        payment_date: Data do pagamento
+        status: Status
+        created_at: Criado em
+        update_at: Atualizado em
+  recruitments:
+    show:
+      paid: Sim
+      not_paid: Não

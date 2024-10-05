@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     resources :hirers
     resources :appliers
     resources :welcomes, only: [:index]
-    resources :roles
+    resources :recruitments
 
     root 'welcomes#index'
   end
