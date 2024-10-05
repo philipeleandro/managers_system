@@ -17,6 +17,7 @@ module FieldsHelper
     case field.attribute
     when :status then field.resource.status_humanize
     when :admin then field.resource.admin? ? t('users.index.is_admin') : t('users.index.is_user')
+    when :paid then field.resource.paid? ? t('recruitments.show.paid') : t('recruitments.show.not_paid')
     else
       field.resource.send(field.attribute)
     end
