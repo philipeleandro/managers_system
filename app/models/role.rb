@@ -2,7 +2,7 @@
 
 class Role < ApplicationRecord
   has_and_belongs_to_many :appliers
-  belongs_to :recruitment
+  belongs_to :recruitment, optional: true
 
   validates :title, :requirements, :description, :status, presence: true
 
