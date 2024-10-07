@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
 class Role < ApplicationRecord
-  has_and_belongs_to_many :appliers
+  has_many :appliers, through: :appliers_roles
+
   belongs_to :recruitment, optional: true
 
   validates :title, :requirements, :description, :status, presence: true

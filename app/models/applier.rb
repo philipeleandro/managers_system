@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Applier < ApplicationRecord
-  has_and_belongs_to_many :roles
+  has_many :roles, through: :appliers_roles
 
   HTTP_PROTOCOL = %w[http https].freeze
 
