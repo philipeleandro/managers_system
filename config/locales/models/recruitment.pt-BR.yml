@@ -8,7 +8,6 @@ pt-BR:
         name: Nome
         hirer_id: Contratante
         hirer: Contratante
-        duration: Duração
         payment_date: Data do pagamento
         status: Status
         created_at: Criado em

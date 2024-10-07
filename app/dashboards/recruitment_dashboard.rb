@@ -11,12 +11,11 @@ class RecruitmentDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     id: Field::Number,
-    duration: Field::String,
     hirer: Field::BelongsTo,
     name: Field::String,
     paid: Field::Boolean,
     payment_date: Field::Date,
-    status: Field::Select.with_options(collection: Hirer::Status.to_a),
+    status: Field::Select.with_options(collection: Role::Status.to_a),
     created_at: Field::DateTime,
     updated_at: Field::DateTime
   }.freeze
@@ -28,16 +27,16 @@ class RecruitmentDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
     id
-    duration
     hirer
     name
+    status
+    created_at
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
     id
-    duration
     hirer
     name
     paid
@@ -51,7 +50,6 @@ class RecruitmentDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
-    duration
     hirer
     name
     paid
@@ -74,7 +72,5 @@ class RecruitmentDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how recruitments are displayed
   # across all pages of the admin dashboard.
   #
-  def display_resource(recruitment)
-    recruitment.name.to_s
-  end
+  def display_resource(_recruitment); end
 end

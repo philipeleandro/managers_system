@@ -71,10 +71,9 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_05_035626) do
 
   create_table "recruitments", force: :cascade do |t|
     t.string "name", null: false
-    t.string "duration", null: false
     t.boolean "paid", default: false, null: false
     t.date "payment_date"
-    t.string "status", default: "active", null: false
+    t.string "status", default: "new", null: false
     t.bigint "hirer_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
