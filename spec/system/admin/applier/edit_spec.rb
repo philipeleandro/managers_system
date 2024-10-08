@@ -16,6 +16,7 @@ RSpec.describe 'Update applier' do
       click_on applier.name.to_s
       click_on "Editar #{applier.name}"
       fill_in 'Nome', with: 'New name'
+      select 'MA', from: 'Estado'
       click_on 'Atualizar Candidato'
 
       expect(page).to have_current_path(admin_applier_path(applier.id))

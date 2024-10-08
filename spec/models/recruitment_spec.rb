@@ -3,5 +3,10 @@
 require 'rails_helper'
 
 RSpec.describe Recruitment do
-  pending "add some examples to (or delete) #{__FILE__}"
+  subject { build(:recruitment) }
+
+  describe 'validations' do
+    it { is_expected.to validate_presence_of(:name) }
+    it { is_expected.to validate_presence_of(:status) }
+  end
 end

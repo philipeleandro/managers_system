@@ -14,9 +14,9 @@ RSpec.describe 'Authorization' do
     let(:user) { create(:user, admin: true) }
 
     it 'accesses page' do
-      visit admin_roles_path
+      visit admin_recruitments_path
 
-      expect(page).to have_current_path(admin_roles_path)
+      expect(page).to have_current_path(admin_recruitments_path)
     end
   end
 
@@ -24,7 +24,7 @@ RSpec.describe 'Authorization' do
     let(:user) { create(:user, admin: false) }
 
     it 'logout out user' do
-      visit admin_roles_path
+      visit admin_recruitments_path
 
       expect(page).to have_content('Logout efetuado com sucesso')
     end
