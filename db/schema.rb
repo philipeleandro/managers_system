@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_10_02_220707) do
+ActiveRecord::Schema[7.2].define(version: 2024_10_05_035626) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -52,6 +52,11 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_02_220707) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "appliers_roles", id: false, force: :cascade do |t|
+    t.bigint "role_id"
+    t.bigint "applier_id"
+  end
+
   create_table "hirers", force: :cascade do |t|
     t.string "name", null: false
     t.string "company_name", null: false
@@ -64,6 +69,17 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_02_220707) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "recruitments", force: :cascade do |t|
+    t.string "name", null: false
+    t.boolean "paid", default: false, null: false
+    t.date "payment_date"
+    t.string "status", default: "new", null: false
+    t.bigint "hirer_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["hirer_id"], name: "index_recruitments_on_hirer_id"
+  end
+
   create_table "roles", force: :cascade do |t|
     t.string "title"
     t.text "description"
@@ -71,6 +87,8 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_02_220707) do
     t.string "status", default: "new", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "recruitment_id"
+    t.index ["recruitment_id"], name: "index_roles_on_recruitment_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -88,4 +106,6 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_02_220707) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "recruitments", "hirers"
+  add_foreign_key "roles", "recruitments"
 end
