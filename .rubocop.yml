@@ -134,7 +134,7 @@ RSpec/AnyInstance:
 
 Style/ClassAndModuleChildren:
   Exclude:
-    - "app/enumerations/hirer/status.rb"
+    - "app/enumerations/**/*"
 
 Rails/ReversibleMigration:
   Exclude:
