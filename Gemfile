@@ -61,7 +61,7 @@ group :development, :test do
 
   gem 'rubocop-rails', '2.20.2'
 
-  gem 'rubocop-rspec', '2.23.2'
+  gem 'rubocop-rspec', '3.1.0'
 
   gem 'rubocop-rspec_rails', '!= 2.29.0', require: false
 
