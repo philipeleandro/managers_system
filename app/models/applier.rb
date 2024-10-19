@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class Applier < ApplicationRecord
+  has_many :roles, through: :appliers_roles
+
   HTTP_PROTOCOL = %w[http https].freeze
 
   has_one_attached :attachment
