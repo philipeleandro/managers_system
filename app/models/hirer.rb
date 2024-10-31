@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Hirer < ApplicationRecord
-  has_many :recruitments, dependent: :nullify
+  has_many :recruitments, dependent: :destroy
 
   validates :name, :company_name, :phone, :email, :cpf, presence: true
   validates :email, :cpf, :cnpj, uniqueness: true
