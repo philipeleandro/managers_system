@@ -1,0 +1,5 @@
+pt-BR:
+  enumerations:
+    recruitment/status:
+      started: Iniciado
+      finished: Finalizado

@@ -15,7 +15,7 @@ RSpec.describe 'Update recruitment' do
       click_on 'Recrutamento'
       click_on recruitment.name
       click_on 'Editar'
-      select 'Em andamento', from: 'Status'
+      fill_in 'Data do pagamento', with: '01/01/2024'
       click_on 'Atualizar Recrutamento'
 
       expect(page).to have_current_path(admin_recruitment_path(recruitment.id))

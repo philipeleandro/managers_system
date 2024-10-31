@@ -12,7 +12,11 @@ pt-BR:
         status: Status
         created_at: Criado em
         update_at: Atualizado em
+  helpers:
+    change_status: Alterar status
   recruitments:
     show:
       paid: Sim
       not_paid: Não
+    messages:
+      are_you_sure: Tem certeza que deseja mudar o status deste recrutamento?

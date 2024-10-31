@@ -50,11 +50,9 @@ class RecruitmentDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
-    hirer
     name
     paid
     payment_date
-    status
   ].freeze
 
   # COLLECTION_FILTERS

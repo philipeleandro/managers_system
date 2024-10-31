@@ -8,6 +8,12 @@ Rails.application.routes.draw do
     resources :recruitments
     resources :roles
 
+    resources :recruitments, only: [:index] do
+      member do
+        patch :change_status
+      end
+    end
+
     root 'welcomes#index'
   end
 

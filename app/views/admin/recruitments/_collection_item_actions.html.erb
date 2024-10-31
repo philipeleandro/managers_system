@@ -1,0 +1,29 @@
+<% if existing_action?(collection_presenter.resource_name, :edit) %>
+  <td><%= link_to(
+    t("administrate.actions.edit"),
+    [:edit, namespace, resource],
+    class: "action-edit",
+  ) if accessible_action?(resource, :edit) %></td>
+<% end %>
+
+<td style='padding-right: 0px;'>
+  <%= link_to(
+      t('helpers.change_status'),
+      change_status_admin_recruitment_path(resource.id),
+      class: 'action-edit', 
+      method: :patch, 
+      data: { confirm: t('recruitments.messages.are_you_sure') } 
+      )
+    %>
+</td>
+
+<% if existing_action?(collection_presenter.resource_name, :destroy) %>
+  <td><%= link_to(
+    t("administrate.actions.destroy"),
+    [namespace, resource],
+    class: 'text-color-red', 
+    method: :delete,
+    data: { turbo_confirm: t("administrate.actions.confirm") }
+  ) if accessible_action?(resource, :destroy) %></td>
+<% end %>
+

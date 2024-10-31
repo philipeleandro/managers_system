@@ -2,19 +2,18 @@
 
 FactoryBot.define do
   factory :recruitment do
-    hirer
+    hirer factory: %i[hirer]
     name { 'Recruitment X' }
     paid { true }
     payment_date { '10/10/2024' }
-    status { :new }
-    hirer_id { hirer.id }
+    status { :started }
   end
 
   factory :second_recruitment, class: 'Recruitment' do
+    hirer factory: %i[hirer2]
     name { 'Recruitment Y' }
     paid { false }
     payment_date { '' }
-    status { :in_progress }
-    hirer_id { nil }
+    status { :finished }
   end
 end

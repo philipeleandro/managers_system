@@ -9,7 +9,8 @@ RSpec.describe Admin::Recruitment::Create do
     let(:service_instance) { described_class.new(recruitment_build: instance) }
 
     context 'when success' do
-      let(:instance) { build(:recruitment) }
+      let(:hirer) { create(:hirer) }
+      let(:instance) { build(:recruitment, hirer_id: hirer.id) }
 
       it { expect(result).to eq({ success: true, recruitment: instance }) }
     end
