@@ -65,5 +65,13 @@ module Admin
 
       redirect_to after_resource_destroyed_path(requested_resource), status: :see_other
     end
+
+    def change_status
+      @recruitment = ::Recruitment.find(params[:id])
+
+      @recruitment.started? ? @recruitment.update(status: 'finished') : @recruitment.update(status: 'started')
+
+      redirect_back(fallback_location: admin_recruitments_path)
+    end
   end
 end
