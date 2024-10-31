@@ -18,7 +18,7 @@ gem 'administrate-field-active_storage'
 
 gem 'pundit'
 
-gem 'rails', '~> 7.2.1'
+gem 'rails', '~> 7.2.2'
 
 gem 'sprockets-rails'
 
